@@ -50,13 +50,6 @@ $resultado = $mysqli->query($sql);
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
                 class="fas fa-bars"></i></button>
 
-        <!-- Navbar Search-->
-        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-            <div class="input-group">
-                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-            </div>
-        </form>
         <!-- Navbar-->
         <ul class="navbar-nav ms-auto me-0 me-md-3 my-2 my-md-0">
             <li class="nav-item dropdown">
@@ -74,6 +67,7 @@ $resultado = $mysqli->query($sql);
             </li>
         </ul>
     </nav>
+
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -139,8 +133,11 @@ $resultado = $mysqli->query($sql);
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
-                    <div class="small">Logged in as:</div>
-                    Start Bootstrap
+                    <div class="small">Sesión iniciada por:</div>
+                    <?php
+                        if(isset($_SESSION['nombre'])) {
+                            echo $_SESSION['nombre'];                    
+                        } ?>
                 </div>
             </nav>
         </div>
@@ -152,15 +149,11 @@ $resultado = $mysqli->query($sql);
                         <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
                         <li class="breadcrumb-item active">Tables</li>
                     </ol>
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            
-                        </div>
-                    </div>
+                    
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            DataTable Example
+                            Usuarios registrados
                         </div>
 
                         <div class="card-body">
@@ -195,55 +188,13 @@ $resultado = $mysqli->query($sql);
                                 </tbody>
                             </table>
                         </div>
-                        <!--
-                        <div class="card-body">
-                            <table id="datatablesSimple">
-                                <thead>
-                                    <tr>
-                                        <th>Usuario</th>
-                                        <th>Password</th>
-                                        <th>Nombre</th>
-                                        <th>Tipo Usuario>
-                                        <th>
-                                    </tr>
-                                </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>Usuario</th>
-                                        <th>Password</th>
-                                        <th>Nombre</th>
-                                        <th>Tipo Usuario>
-                                        <th>
-                                    </tr>
-                                </tfoot>
-                                <tbody>
-                                    
-                                    <?php /* while ($row = $resultado -> fetch_assoc()) { ?>
-                                        
-                                        <tr>
-                                            <td><?php echo $row['usuario'] ?></td>
-                                            <td><?php echo $row['password'] ?></td>
-                                            <td><?php echo $row['nombre'] ?></td>
-                                            <td><?php echo $row['tipo_usuario'] ?></td>
-                                        </tr>
-                                    <?php } */ ?>
-                                    
-                                </tbody>
-                            </table>
-                        </div>
-                                    -->
                     </div>
                 </div>
             </main>
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2023</div>
-                        <div>
-                            <a href="#">Privacy Policy</a>
-                            &middot;
-                            <a href="#">Terms &amp; Conditions</a>
-                        </div>
+                        <div class="text-muted">Copyright &copy; 2024</div>
                     </div>
                 </div>
             </footer>
