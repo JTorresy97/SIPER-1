@@ -64,13 +64,7 @@ $nombre = $_SESSION['nombre'];
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                        <a class="nav-link" style="margin-top: 30px;">
-                            <div class="sb-nav-link-icon">
-
-                                <i class="fa-solid fa-house"></i>
-                            </div>INICIO
-                        </a>
-
+                        
                         <div class="sb-sidenav-menu-heading">OPCIONES</div>
 
                         <a class="nav-link" href="productos.php">
@@ -122,7 +116,7 @@ $nombre = $_SESSION['nombre'];
 
                         <?php } ?>
 
-                        <br><br><br>
+                        <br><br><br><br><br>
 
                         <a class="nav-link" href="logout.php">
                             <div class="sb-nav-link-icon">
