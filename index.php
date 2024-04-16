@@ -27,7 +27,7 @@
                 $_SESSION['tipo_usuario'] = $row['tipo_usuario'];
                 $nombre = $row['nombre'];
 
-                header("Location: principal.php");
+                header("Location: main.php");
 
             }else{
                 echo "La contraseña no coincide";
