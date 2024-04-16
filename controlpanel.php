@@ -33,7 +33,7 @@ $nombre = $_SESSION['nombre'];
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
 
         <!-- LOGO & BRAND -->
-        <a class="navbar-brand ps-3" href="#">
+        <a class="navbar-brand ps-3" href="main.php">
             <img src="image.png" alt="logo" style="height: 30px; margin-left: 30px;">
             <b>SIPER</b><br>
             <i>Papelería El Radar</i></a>
@@ -64,7 +64,7 @@ $nombre = $_SESSION['nombre'];
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                        <a class="nav-link" href="principal.php" style="margin-top: 30px;">
+                        <a class="nav-link" style="margin-top: 30px;">
                             <div class="sb-nav-link-icon">
 
                                 <i class="fa-solid fa-house"></i>
@@ -73,19 +73,19 @@ $nombre = $_SESSION['nombre'];
 
                         <div class="sb-sidenav-menu-heading">OPCIONES</div>
 
-                        <a class="nav-link" href="charts.html">
+                        <a class="nav-link" href="productos.php">
                             <div class="sb-nav-link-icon">
                                 <i class="fa-solid fa-list" style="margin-right: 2px;"></i>
                             </div>Lista de Productos
                         </a>
                         
-                        <a class="nav-link" href="charts.html">
+                        <a class="nav-link" href="venta.php">
                             <div class="sb-nav-link-icon">
                                 <i class="fa-solid fa-dollar-sign" style="margin-right: 8px;"></i>
                             </div>Realizar Venta
                         </a>
                         
-                        <a class="nav-link" href="charts.html">
+                        <a class="nav-link" href="proveedores.php">
                             <div class="sb-nav-link-icon">
                                 <i class="fa-solid fa-truck-field"></i>
                             </div>Lista de Proveedores
@@ -116,22 +116,19 @@ $nombre = $_SESSION['nombre'];
                         if ($tipo_usuario == 1) { ?>
 
                         <!-- CONTENIDO DE LO QUE PUEDE VER EL USUARIO TIPO 1 "ADMINISTRADOR" -->
+                        <!-- CONTENIDO DE LO QUE PUEDE VER EL USUARIO TIPO 1 "ADMINISTRADOR" -->
+                        <!-- CONTENIDO DE LO QUE PUEDE VER EL USUARIO TIPO 1 "ADMINISTRADOR" -->
+                        <!-- CONTENIDO DE LO QUE PUEDE VER EL USUARIO TIPO 1 "ADMINISTRADOR" -->
 
                         <?php } ?>
 
-
                         <br><br><br>
 
-                        <a class="nav-link" href="charts.html">
+                        <a class="nav-link" href="logout.php">
                             <div class="sb-nav-link-icon">
                             <i class="fa-solid fa-circle-xmark"></i>
                             </div>Cerrar sesión</a>
 
-
-                        <a class="nav-link" href="tables.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Tables
-                        </a>
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
