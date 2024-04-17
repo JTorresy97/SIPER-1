@@ -36,7 +36,7 @@ $nombre = $_SESSION['nombre'];
 
         <!-- LOGO & BRAND -->
         <a class="navbar-brand ps-3" href="main.php">
-            <img src="image.png" alt="logo" style="height: 30px; margin-top: 10px; margin-left: 30px;">
+            <img src="image.png" alt="logo" style="height: 30px; margin-left: 30px;">
             <b>SIPER</b><br>
         </a>
 
