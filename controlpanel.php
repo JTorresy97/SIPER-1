@@ -10,6 +10,15 @@ if (!isset($_SESSION['id'])) {
 $tipo_usuario = $_SESSION['tipo_usuario'];
 $nombre = $_SESSION['nombre'];
 
+$query = "SELECT * FROM productos";
+$resultado = mysqli_query($mysqli, $query);
+
+if (!$resultado) {
+    die("Error al obtener los productos: " . mysqli_error($mysqli));
+}
+
+$productos = mysqli_fetch_all($resultado, MYSQLI_ASSOC);
+mysqli_free_result($resultado);
 
 ?>
 

@@ -2,6 +2,14 @@
 
 require 'controlpanel.php';
 
+$sql = "SELECT * FROM productos";
+$resultado = mysqli_query($mysqli, $sql);
+
+if (!$resultado) {
+    echo "Error al consultar la base de datos: " - mysqli_error($mysqli);
+    exit;
+}
+
 ?>
 
 <div id="layoutSidenav">
@@ -33,7 +41,24 @@ require 'controlpanel.php';
 
                         <tbody>
 
-                        
+                        <?php
+
+                        while ($fila = mysqli_fetch_assoc($resultado)) {
+                            echo "<tr>
+                                        <td>{$fila['id']}</td>
+                                        <td>{$fila['nombre']}</td>
+                                        <td>{$fila['descripcion']}</td>
+                                        <td>{$fila['cantidad']}</td>
+                                        <td>{$fila['precio']}</td>
+                                        <td>
+                                            <a href='editar_producto.php?id={$fila['id']}' class='btn btn-primary'>Editar</a>
+                                            <a href='eliminar_producto.php?id={$fila['id']}' class='btn btn-danger' onclick='return confirm(\"¿Estás seguro de querer eliminar este producto?\")'>Eliminar</a>
+                                        </td>
+                                    </tr>";
+                        }
+
+                        ?>
+
                         </tbody>
                     </table>
                 </div>
