@@ -32,7 +32,7 @@ if (!$resultado) {
         <main>
             <div class="card card-primary">
                 <div class="card-header">
-                    <h3 class="card-title">LISTADO DE PRODUCTOS</h3>
+                    <h3 class="card-title"><b>LISTADO DE PRODUCTOS</b></h3>
                     <div class="card-tools">
                         <a class="btn btn-success" href="form_agregar.php" role="button">Agregar Nuevo Producto</a>
                     </div>

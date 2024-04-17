@@ -7,9 +7,9 @@ require 'controlpanel.php';
 <div id="layoutSidenav">
     <div id="layoutSidenav_content">
         <main>
-            <div class="card card-primary">
+            <div class="card card-danger">
                 <div class="card-header">
-                    <h3 class="card-title">LISTA DE PROVEEDORES</h3>
+                    <h3 class="card-title"><b>LISTA DE PROVEEDORES</b></h3>
                 </div>
                 
                 <div class="card-body">
