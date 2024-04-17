@@ -4,4 +4,10 @@ require 'controlpanel.php';
 
 ?>
 
-<div class="venta">Venta</div>
+<div id="layoutSidenav">
+    <div id="layoutSidenav_content">
+        <main>
+        <h1>Módulo de Ventas</h1>
+        </main>
+    </div>
+</div>
