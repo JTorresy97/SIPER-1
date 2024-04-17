@@ -5,31 +5,38 @@ require 'controlpanel.php';
 
 ?>
 
-
 <div id="layoutSidenav">
     <div id="layoutSidenav_content">
         <main>
-        <div class="card card-primary">
-            <div class="card-header">
-                <h3 class="card-title">Default Card Example</h3>
-                <div class="card-tools">
-                    <!-- Buttons, labels, and many other things can be placed here! -->
-                    <!-- Here is a label for example -->
-                    <span class="badge badge-primary">Label</span>
+            <div class="card card-success">
+                <div class="card-header">
+                    <h3 class="card-title">AGREGAR PRODUCTO</h3>
                 </div>
-                <!-- /.card-tools -->
+
+                <div class="card card-success">
+                    <div class="card-body">
+                        <form action="productos.php" method="POST">
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre:</label>
+                                <input type="text" class="form-control" name="nombre" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="descripcion" class="form-label">Descripción:</label>
+                                <input type="text" class="form-control" name="descripcion" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="cantidad" class="form-label">Cantidad:</label>
+                                <input type="number" class="form-control" name="cantidad" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="precio" class="form-label">Precio:</label>
+                                <input type="number" class="form-control" name="precio" required>
+                            </div>
+                            <button type="submit" class="btn btn-success btn-lg btn-block">Agregar Nuevo Producto</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <!-- /.card-header -->
-            <div class="card-body">
-                The body of the card
-            </div>
-            <!-- /.card-body -->
-            <div class="card-footer">
-                The footer of the card
-            </div>
-            <!-- /.card-footer -->
-        </div>
-        <!-- /.card -->
         </main>
     </div>
 </div>

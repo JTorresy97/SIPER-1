@@ -1,15 +1,30 @@
 <?php
-
 require 'controlpanel.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nombre = $_POST['nombre'];
+    $descripcion = $_POST['descripcion'];
+    $cantidad = $_POST['cantidad'];
+    $precio = $_POST['precio'];
+
+    $query = "INSERT INTO productos (nombre, descripcion, cantidad, precio) VALUES ('$nombre', '$descripcion', $cantidad, $precio)";
+
+    if (mysqli_query($mysqli, $query)) {
+        header("Location: productos.php");
+        exit();
+    } else {
+        echo "Error al agregar el producto: " . mysqli_error($mysqli);
+    }
+}
+
 
 $sql = "SELECT * FROM productos";
 $resultado = mysqli_query($mysqli, $sql);
 
 if (!$resultado) {
-    echo "Error al consultar la base de datos: " - mysqli_error($mysqli);
+    echo "Error al consultar la base de datos: " . mysqli_error($mysqli);
     exit;
 }
-
 ?>
 
 <div id="layoutSidenav">
@@ -22,7 +37,6 @@ if (!$resultado) {
                         <a class="btn btn-success" href="form_agregar.php" role="button">Agregar Nuevo Producto</a>
                     </div>
                 </div>
-                <!-- /.card-header -->
                 <div class="card-body">
                     Productos en Stock
                 </div>
@@ -38,13 +52,10 @@ if (!$resultado) {
                                 <th>Acciones</th>
                             </tr>
                         </thead>
-
                         <tbody>
-
-                        <?php
-
-                        while ($fila = mysqli_fetch_assoc($resultado)) {
-                            echo "<tr>
+                            <?php
+                            while ($fila = mysqli_fetch_assoc($resultado)) {
+                                echo "<tr>
                                         <td>{$fila['id']}</td>
                                         <td>{$fila['nombre']}</td>
                                         <td>{$fila['descripcion']}</td>
@@ -55,10 +66,8 @@ if (!$resultado) {
                                             <a href='eliminar_producto.php?id={$fila['id']}' class='btn btn-danger' onclick='return confirm(\"¿Estás seguro de querer eliminar este producto?\")'>Eliminar</a>
                                         </td>
                                     </tr>";
-                        }
-
-                        ?>
-
+                            }
+                            ?>
                         </tbody>
                     </table>
                 </div>
