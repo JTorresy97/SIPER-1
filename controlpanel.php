@@ -81,19 +81,19 @@ mysqli_free_result($resultado);
                         <a class="nav-link" href="productos.php">
                             <div class="sb-nav-link-icon">
                                 <i class="fa-solid fa-list" style="margin-right: 2px;"></i>
-                            </div>Lista de Productos
+                            </div>PRODUCTOS
                         </a>
 
                         <a class="nav-link" href="venta.php">
                             <div class="sb-nav-link-icon">
                                 <i class="fa-solid fa-dollar-sign" style="margin-right: 8px;"></i>
-                            </div>Realizar Venta
+                            </div>REALIZAR VENTA
                         </a>
 
                         <a class="nav-link" href="proveedores.php">
                             <div class="sb-nav-link-icon">
                                 <i class="fa-solid fa-truck-field"></i>
-                            </div>Lista de Proveedores
+                            </div>PROVEEDORES
                         </a>
 
                         <!-- SYSTEM CONFIGURATION -->
@@ -102,7 +102,7 @@ mysqli_free_result($resultado);
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-gear"></i></div>
 
-                            Ajustes<div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            AJUSTES<div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
 
                         <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">

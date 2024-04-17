@@ -37,19 +37,17 @@ if (!$resultado) {
                         <a class="btn btn-success" href="form_agregar.php" role="button">Agregar Nuevo Producto</a>
                     </div>
                 </div>
-                <div class="card-body">
-                    Productos en Stock
-                </div>
+                
                 <div class="card-body">
                     <table id="datatablesSimple">
                         <thead>
                             <tr>
-                                <th>Id</th>
-                                <th>Nombre</th>
-                                <th>Descripción</th>
-                                <th>Cantidad</th>
-                                <th>Precio</th>
-                                <th>Acciones</th>
+                                <th>ID</th>
+                                <th>NOMBRE</th>
+                                <th>DESCRIPCIÓN</th>
+                                <th>CANTIDAD</th>
+                                <th>PRECIO</th>
+                                <th>ACCIONES</th>
                             </tr>
                         </thead>
                         <tbody>
