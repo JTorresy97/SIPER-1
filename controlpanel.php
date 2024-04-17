@@ -110,7 +110,7 @@ mysqli_free_result($resultado);
                                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
                                     <i class="fa-solid fa-star" style="margin-right: 10px;"></i> General</a>
 
-                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                <a class="nav-link collapsed" href="usuarios.php" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
                                     <i class="fa-solid fa-user" style="margin-right: 10px;"></i> Usuarios</a>
 
                             </nav>
