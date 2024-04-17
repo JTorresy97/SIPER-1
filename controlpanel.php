@@ -23,6 +23,8 @@ $nombre = $_SESSION['nombre'];
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>SIPER sistema de información Papelería el Radar</title>
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
     <link rel="icon" type="image/png" href="image.png">
@@ -34,11 +36,11 @@ $nombre = $_SESSION['nombre'];
 
         <!-- LOGO & BRAND -->
         <a class="navbar-brand ps-3" href="main.php">
-            <img src="image.png" alt="logo" style="height: 30px; margin-left: 30px;">
+            <img src="image.png" alt="logo" style="height: 30px; margin-top: 10px; margin-left: 30px;">
             <b>SIPER</b><br>
-            <i>Papelería El Radar</i></a>
+        </a>
 
-        <!-- SIDEBAR TOOGLE -->
+        <!-- SIDEBAR TOGGLE -->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
 
         <!-- TOP NAVBAR -->
@@ -64,7 +66,7 @@ $nombre = $_SESSION['nombre'];
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                        
+
                         <div class="sb-sidenav-menu-heading">OPCIONES</div>
 
                         <a class="nav-link" href="productos.php">
@@ -72,13 +74,13 @@ $nombre = $_SESSION['nombre'];
                                 <i class="fa-solid fa-list" style="margin-right: 2px;"></i>
                             </div>Lista de Productos
                         </a>
-                        
+
                         <a class="nav-link" href="venta.php">
                             <div class="sb-nav-link-icon">
                                 <i class="fa-solid fa-dollar-sign" style="margin-right: 8px;"></i>
                             </div>Realizar Venta
                         </a>
-                        
+
                         <a class="nav-link" href="proveedores.php">
                             <div class="sb-nav-link-icon">
                                 <i class="fa-solid fa-truck-field"></i>
@@ -91,15 +93,16 @@ $nombre = $_SESSION['nombre'];
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                             <div class="sb-nav-link-icon"><i class="fa-solid fa-gear"></i></div>
 
-                            Ajustes<div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div></a>
+                            Ajustes<div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
 
                         <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                <i class="fa-solid fa-star" style="margin-right: 10px;"></i> General</a>
+                                    <i class="fa-solid fa-star" style="margin-right: 10px;"></i> General</a>
 
                                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                <i class="fa-solid fa-user" style="margin-right: 10px;"></i> Usuarios</a>
+                                    <i class="fa-solid fa-user" style="margin-right: 10px;"></i> Usuarios</a>
 
                             </nav>
                         </div>
@@ -109,10 +112,10 @@ $nombre = $_SESSION['nombre'];
                         <?php
                         if ($tipo_usuario == 1) { ?>
 
-                        <!-- CONTENIDO DE LO QUE PUEDE VER EL USUARIO TIPO 1 "ADMINISTRADOR" -->
-                        <!-- CONTENIDO DE LO QUE PUEDE VER EL USUARIO TIPO 1 "ADMINISTRADOR" -->
-                        <!-- CONTENIDO DE LO QUE PUEDE VER EL USUARIO TIPO 1 "ADMINISTRADOR" -->
-                        <!-- CONTENIDO DE LO QUE PUEDE VER EL USUARIO TIPO 1 "ADMINISTRADOR" -->
+                            <!-- CONTENIDO DE LO QUE PUEDE VER EL USUARIO TIPO 1 "ADMINISTRADOR" -->
+                            <!-- CONTENIDO DE LO QUE PUEDE VER EL USUARIO TIPO 1 "ADMINISTRADOR" -->
+                            <!-- CONTENIDO DE LO QUE PUEDE VER EL USUARIO TIPO 1 "ADMINISTRADOR" -->
+                            <!-- CONTENIDO DE LO QUE PUEDE VER EL USUARIO TIPO 1 "ADMINISTRADOR" -->
 
                         <?php } ?>
 
@@ -120,8 +123,9 @@ $nombre = $_SESSION['nombre'];
 
                         <a class="nav-link" href="logout.php">
                             <div class="sb-nav-link-icon">
-                            <i class="fa-solid fa-circle-xmark"></i>
-                            </div>Cerrar sesión</a>
+                                <i class="fa-solid fa-circle-xmark"></i>
+                            </div>Cerrar sesión
+                        </a>
 
                     </div>
                 </div>
@@ -134,7 +138,7 @@ $nombre = $_SESSION['nombre'];
                 </div>
             </nav>
         </div>
-        
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
