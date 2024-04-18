@@ -31,7 +31,7 @@ mysqli_free_result($resultado);
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>SIPER sistema de información Papelería el Radar</title>
+    <title>SIPER Inventarios Papelería el Radar</title>
     <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
@@ -45,25 +45,21 @@ mysqli_free_result($resultado);
 
         <!-- LOGO & BRAND -->
         <a class="navbar-brand ps-3" href="main.php">
-            <img src="image.png" alt="logo" style="height: 30px; margin-left: 30px;">
+            <img src="image.png" alt="logo" style="height: 30px; margin-left: 40px; font-size: 40px">
             <b>SIPER</b><br>
         </a>
 
         <!-- SIDEBAR TOGGLE -->
-        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+        <button class="btn btn-link btn-lg order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!" style="font-size: 30px;"><i class="fas fa-bars"></i></button>
 
         <!-- TOP NAVBAR -->
         <ul class="navbar-nav ms-auto me-0 me-md-3 my-2 my-md-0">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $nombre; ?><i class="fas fa-user fa-fw" style="padding-left: 12px;"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li style="text-align: center"><?php echo $nombre; ?></li>
+                    <li style="text-align: center; font-size: 25px;"><?php echo $nombre; ?></li>
                     <hr class="dropdown-divider">
-                    <li><a class="dropdown-item" href="#!">Configuración</a></li>
-                    <li>
-                        <hr class="dropdown-divider" />
-                    </li>
-                    <li><a class="dropdown-item" href="logout.php">Cerrar Sesión</a></li>
+                    <li><a class="dropdown-item" href="logout.php" style="text-align: center;">Cerrar Sesión</a></li>
                 </ul>
             </li>
         </ul>
@@ -73,7 +69,7 @@ mysqli_free_result($resultado);
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                <div class="sb-sidenav-menu">
+                <div class="sb-sidenav-menu" style="font-size: 20px;">
                     <div class="nav">
 
                         <div class="sb-sidenav-menu-heading">OPCIONES</div>
@@ -87,7 +83,7 @@ mysqli_free_result($resultado);
                         <a class="nav-link" href="venta.php">
                             <div class="sb-nav-link-icon">
                                 <i class="fa-solid fa-dollar-sign" style="margin-right: 8px;"></i>
-                            </div>REALIZAR VENTA
+                            </div>VENTAS
                         </a>
 
                         <a class="nav-link" href="proveedores.php">
@@ -128,12 +124,12 @@ mysqli_free_result($resultado);
 
                         <?php } ?>
 
-                        <br><br><br><br><br>
+                        <br><br><br><br>
 
-                        <a class="nav-link" href="logout.php">
+                        <a class="nav-link btn btn-danger" href="logout.php" style="font-size: 20px">
                             <div class="sb-nav-link-icon">
                                 <i class="fa-solid fa-circle-xmark"></i>
-                            </div>Cerrar sesión
+                            </div><b>CERRAR SESIÓN</b>
                         </a>
 
                     </div>

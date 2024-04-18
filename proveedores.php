@@ -9,11 +9,11 @@ require 'controlpanel.php';
         <main>
             <div class="card card-danger">
                 <div class="card-header">
-                    <h3 class="card-title"><b>LISTA DE PROVEEDORES</b></h3>
+                    <h3 class="card-title" style="font-size: 40px;"><b>LISTADO DE PROVEEDORES</b></h3>
                 </div>
                 
                 <div class="card-body">
-                    <table id="datatablesSimple">
+                    <table id="datatablesSimple" style="font-size: 20px;">
                         <thead>
                             <tr>
                                 <th>Name</th>

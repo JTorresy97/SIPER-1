@@ -32,14 +32,14 @@ if (!$resultado) {
         <main>
             <div class="card card-primary">
                 <div class="card-header">
-                    <h3 class="card-title"><b>LISTADO DE PRODUCTOS</b></h3>
+                    <h3 class="card-title" style="font-size: 40px;"><b>LISTADO DE PRODUCTOS</b></h3>
                     <div class="card-tools">
-                        <a class="btn btn-success btn-lg" href="form_agregar.php" role="button">Agregar Nuevo Producto</a>
+                        <a class="btn btn-success btn-lg" href="form_agregar.php" role="button" style="font-size: 30px;"><b>AGREGAR NUEVO PRODUCTO</b></a>
                     </div>
                 </div>
                 
                 <div class="card-body">
-                    <table id="datatablesSimple">
+                    <table id="datatablesSimple" style="font-size: 20px;">
                         <thead>
                             <tr>
                                 <th>ID</th>

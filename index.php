@@ -30,12 +30,12 @@
                 header("Location: main.php");
 
             }else{
-                echo "La contraseña no coincide";
+                echo "<script>alert('USUARIO O CONTRASEÑA INVÁLIDO');</script>";
             }
 
 
         }else{
-            echo "No existe usuario";
+            echo "<script>alert('USUARIO O CONTRASEÑA INVÁLIDO');</script>";
         }
     }
 
@@ -62,24 +62,19 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
                                 <div class="card shadonw-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Ingresa tus credenciales</h3></div>
+                                    <div class="card-header"><h3 class="text-center font-weight-large my-4">INGRESA TUS DATOS</h3></div>
                                     <div class="card-body">
                                         <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="inputEmail" name="usuario" type="text" placeholder="Ingrese nombre de usuario" />
-                                                <label for="inputEmail">Usuario</label>
+                                                <label for="inputEmail">USUARIO</label>
                                             </div>
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="inputPassword" name="password" type="password" placeholder="Password" />
-                                                <label for="inputPassword">Password</label>
-                                            </div>
-                                            <div class="form-check mb-3">
-                                                <input class="form-check-input" id="inputRememberPassword" type="checkbox" value="" />
-                                                <label class="form-check-label" for="inputRememberPassword">Recordar Contraseña</label>
-                                            </div>
-                                            <hr>
-                                            <div class="d-flex align-items-center justify-content" style="justify-content: center;">
-                                                <button type="submit"   class="btn btn-primary">Ingresar</button>
+                                                <label for="inputPassword">CONTRASEÑA</label>
+                                            </div><br>
+                                            <div class="btn btn-primary d-flex align-items-center justify-content-center" style="font-size: 30px;">
+                                                <button type="submit"   class="btn btn-primary"><b>INGRESAR</b></button>
                                             </div>
                                         </form>
                                     </div>
