@@ -34,10 +34,14 @@ if (!$resultado) {
                 <div class="card-header">
                     <h3 class="card-title" style="font-size: 40px;"><b>LISTADO DE PRODUCTOS</b></h3>
                     <div class="card-tools">
-                        <a class="btn btn-success btn-lg" href="form_agregar.php" role="button" style="font-size: 30px;"><b>AGREGAR NUEVO PRODUCTO</b></a>
+                        <?php
+                        if ($tipo_usuario == 1) { ?>
+
+                            <a class="btn btn-success btn-lg" href="form_agregar.php" role="button" style="font-size: 30px;"><b>AGREGAR NUEVO PRODUCTO</b></a>
+                        <?php } ?>
                     </div>
                 </div>
-                
+
                 <div class="card-body">
                     <table id="datatablesSimple" style="font-size: 20px;">
                         <thead>
@@ -47,28 +51,33 @@ if (!$resultado) {
                                 <th>DESCRIPCIÓN</th>
                                 <th>CANTIDAD</th>
                                 <th>PRECIO</th>
-                                <th>ACCIONES</th>
+                                <?php if ($tipo_usuario == 1) { ?>
+                                    <th>ACCIONES</th>
+                                <?php } ?>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
                             while ($fila = mysqli_fetch_assoc($resultado)) {
                                 echo "<tr>
-                                        <td>{$fila['id']}</td>
-                                        <td>{$fila['nombre']}</td>
-                                        <td>{$fila['descripcion']}</td>
-                                        <td>{$fila['cantidad']}</td>
-                                        <td>{$fila['precio']}</td>
-                                        <td>
-                                            <a href='editar_producto.php?id={$fila['id']}' class='btn btn-primary'>Editar</a>
-                                            <a href='eliminar_producto.php?id={$fila['id']}' class='btn btn-danger' onclick='return confirm(\"¿Estás seguro de querer eliminar este producto?\")'>Eliminar</a>
-                                        </td>
-                                    </tr>";
+                        <td>{$fila['id']}</td>
+                        <td>{$fila['nombre']}</td>
+                        <td>{$fila['descripcion']}</td>
+                        <td>{$fila['cantidad']}</td>
+                        <td>{$fila['precio']}</td>";
+                                if ($tipo_usuario == 1) {
+                                    echo "<td>
+                            <a href='editar_producto.php?id={$fila['id']}' class='btn btn-primary'>Editar</a>
+                            <a href='eliminar_producto.php?id={$fila['id']}' class='btn btn-danger' onclick='return confirm(\"¿Estás seguro de querer eliminar este producto?\")'>Eliminar</a>
+                          </td>";
+                                }
+                                echo "</tr>";
                             }
                             ?>
                         </tbody>
                     </table>
                 </div>
+
             </div>
         </main>
     </div>

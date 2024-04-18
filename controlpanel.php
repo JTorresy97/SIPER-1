@@ -86,6 +86,10 @@ mysqli_free_result($resultado);
                             </div>VENTAS
                         </a>
 
+            <!-- ACCESO ÚNICAMENTE PARA ADMINISTRADOR -->
+                        <?php 
+                        if ($tipo_usuario == 1) { ?>
+
                         <a class="nav-link" href="proveedores.php">
                             <div class="sb-nav-link-icon">
                                 <i class="fa-solid fa-truck-field"></i>
@@ -111,16 +115,6 @@ mysqli_free_result($resultado);
 
                             </nav>
                         </div>
-
-
-
-                        <?php
-                        if ($tipo_usuario == 1) { ?>
-
-                            <!-- CONTENIDO DE LO QUE PUEDE VER EL USUARIO TIPO 1 "ADMINISTRADOR" -->
-                            <!-- CONTENIDO DE LO QUE PUEDE VER EL USUARIO TIPO 1 "ADMINISTRADOR" -->
-                            <!-- CONTENIDO DE LO QUE PUEDE VER EL USUARIO TIPO 1 "ADMINISTRADOR" -->
-                            <!-- CONTENIDO DE LO QUE PUEDE VER EL USUARIO TIPO 1 "ADMINISTRADOR" -->
 
                         <?php } ?>
 
