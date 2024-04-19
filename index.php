@@ -6,16 +6,16 @@
 
     if($_POST) {
 
-        $usuario = $_POST['usuario'];
+        $usuario = $_POST['usuario']; 
         $password = $_POST['password'];
 
-        $sql = "SELECT id, password, nombre, tipo_usuario FROM usuario WHERE usuario = '$usuario'";
-        $resultado = $mysqli -> query($sql);
-        $num = $resultado -> num_rows;
+        $sql = "SELECT id, password, nombre, tipo_usuario FROM usuario WHERE usuario = '$usuario'"; 
+        $resultado = $mysqli->query($sql);
+        $num = $resultado->num_rows;
 
-        if($num>0) {
+        if($num > 0) {
 
-            $row = $resultado -> fetch_assoc();
+            $row = $resultado->fetch_assoc();
             $password_bd = $row['password'];
 
             $pass_c = sha1($password);
@@ -29,17 +29,18 @@
 
                 header("Location: main.php");
 
-            }else{
+            } else {
                 echo "<script>alert('USUARIO O CONTRASEÑA INVÁLIDO');</script>";
             }
 
 
-        }else{
+        } else {
             echo "<script>alert('USUARIO O CONTRASEÑA INVÁLIDO');</script>";
         }
     }
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -62,6 +63,9 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
                                 <div class="card shadonw-lg border-0 rounded-lg mt-5">
+                                    <div>
+                                        <img class="logo" src="image.png" alt="logo">
+                                    </div>
                                     <div class="card-header"><h3 class="text-center font-weight-large my-4">INGRESA TUS DATOS</h3></div>
                                     <div class="card-body">
                                         <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
