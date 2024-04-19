@@ -102,19 +102,18 @@ mysqli_free_result($resultado);
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-gear"></i></div>
 
-                                AJUSTES<div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                AVANZADA<div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
 
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                        <i class="fa-solid fa-star" style="margin-right: 10px;"></i> General</a>
-
-                                    <a class="nav-link collapsed" href="usuarios.php" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                        <i class="fa-solid fa-user" style="margin-right: 10px;"></i> Usuarios</a>
-
+                                    
+                                    <a class="nav-link collapsed" href="usuarios.php">
+                                        <i class="fa-solid fa-user" style="margin-right: 10px;"></i> Usuarios
+                                    </a>
                                 </nav>
                             </div>
+
 
                         <?php } ?>
 

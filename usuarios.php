@@ -28,31 +28,26 @@ $resultado = $mysqli->query($sql);
 <div id="layoutSidenav">
     <div id="layoutSidenav_content">
         <main>
-            <div class="container-fluid px-4">
-                <h1 class="mt-4">Usuarios</h1>
+            <div class="container-fluid">
+                <h1 class="mt-4">USUARIOS</h1>
 
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <i class="fas fa-table me-1"></i>
-                        Usuarios registrados
-                    </div>
+                <div class="card bg-success ">
 
-                    <div class="card-body">
-                        <table id="datatablesSimple">
+
+                    <div class="card-body bg-light">
+                        <table id="datatablesSimple" style="font-size: 20px;">
                             <thead>
                                 <tr>
-                                    <th>Usuario</th>
-                                    <th>Password</th>
-                                    <th>Nombre</th>
-                                    <th>Tipo Usuario</th>
+                                    <th>USUARIO</th>
+                                    <th>NOMBRE</th>
+                                    <th>TIPO DE USUARIO</th>
                                 </tr>
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <th>Usuario</th>
-                                    <th>Password</th>
-                                    <th>Nombre</th>
-                                    <th>Tipo Usuario</th>
+                                    <th>USUARIO</th>
+                                    <th>NOMBRE</th>
+                                    <th>TIPO USUARIO</th>
                                 </tr>
                             </tfoot>
                             <tbody>
@@ -61,7 +56,6 @@ $resultado = $mysqli->query($sql);
 
                                     <tr>
                                         <td><?php echo $row['usuario']; ?></td>
-                                        <td><?php echo $row['password']; ?></td>
                                         <td><?php echo $row['nombre']; ?></td>
                                         <td><?php echo $row['tipo_usuario']; ?></td>
                                     </tr>
