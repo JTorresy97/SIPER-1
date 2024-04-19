@@ -7,3 +7,8 @@ window.addEventListener('DOMContentLoaded', event => {
         new simpleDatatables.DataTable(datatablesSimple);
     }
 });
+
+$(document).ready(function() {
+    $('#productos_acabandose').DataTable();
+    $('#productos_excedentes').DataTable();
+});

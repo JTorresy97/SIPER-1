@@ -40,31 +40,56 @@ while ($row = $resultado_acabandose->fetch_assoc()) {
 ?>
 
 
-
 <div id="layoutSidenav">
     <div id="layoutSidenav_content">
+        <main>
+            <div class="card text-white bg-danger" style=" margin-left: 10px; margin-right: 10px;">
+                <div class="card-header" style="font-size: 40px;"><b>POR ACABAR</b></div>
+                <div class="card-body">
+                    <div class="container bg-white">
+                        <table id="productos_acabandose" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>PRODUCTO</th>
+                                    <th>CANTIDAD</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($productos_acabandose as $producto => $cantidad) : ?>
+                                    <tr>
+                                        <td><?php echo $producto; ?></td>
+                                        <td><?php echo $cantidad; ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
 
-
-        <div class="card text-white bg-danger mb-3" style=" margin-left: 10px; margin-right: 10px;">
-            <div class="card-header" style="font-size: 40px;"><b>POR ACABAR</b></div>
-            <ul class="list-group">
-                <?php foreach ($productos_acabandose as $producto => $cantidad) : ?>
-                    <li class="list-group-item"><?php echo $producto . ' -> ' . $cantidad; ?></li>
-                <?php endforeach; ?>
-            </ul>
-        </div>
-
-        <div class="card text-white bg-success mb-3" style=" margin-left: 10px; margin-right: 10px;">
-            <div class="card-header" style="font-size: 40px;"><b>EXCENDENTES</b></div>
-            <ul class="list-group">
-                <?php foreach ($productos_excedentes as $producto => $cantidad) : ?>
-                    <li class="list-group-item"><?php echo $producto . ' -> ' . $cantidad; ?></li>
-                <?php endforeach; ?>
-            </ul>
-        </div>
-
-
-
-
+            <div class="card text-white bg-success" style=" margin-left: 10px; margin-right: 10px;">
+                <div class="card-header" style="font-size: 40px;"><b>EXCEDENTES</b></div>
+                <div class="card-body">
+                    <div class="container bg-white">
+                        <table id="productos_excedentes" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>PRODUCTO</th>
+                                    <th>CANTIDAD</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($productos_excedentes as $producto => $cantidad) : ?>
+                                    <tr>
+                                        <td><?php echo $producto; ?></td>
+                                        <td><?php echo $cantidad; ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
 </div>
