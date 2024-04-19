@@ -13190,6 +13190,13 @@ body {
   border-radius: 50%;
 }
 
+.my-element {
+  -webkit-appearance: none; /* Prefijo de proveedor */
+  -moz-appearance: none; /* Prefijo de proveedor */
+  appearance: none; /* Propiedad estándar */
+}
+
+
 @keyframes rotateAnimation {
   from {
     transform: rotate(0deg);
@@ -13199,3 +13206,4 @@ body {
     transform: rotate(360deg);
   }
 }
+
