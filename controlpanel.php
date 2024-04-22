@@ -38,6 +38,13 @@ mysqli_free_result($resultado);
     <link href="css/styles.css" rel="stylesheet" />
     <link rel="icon" type="image/png" href="image.png">
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <style>
+        #clock {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
 </head>
 
 <body class="sb-nav-fixed">
@@ -71,6 +78,23 @@ mysqli_free_result($resultado);
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu" style="font-size: 20px;">
                     <div class="nav">
+                        <!-- CLOCK -->
+                        <div id="clock"></div>
+                        <script>
+                            function updateTime() {
+                                var now = new Date();
+                                var date = now.toLocaleDateString();
+                                var time = now.toLocaleTimeString();
+                                var dateTimeString = date + ' ' + time;
+                                document.getElementById('clock').textContent = dateTimeString;
+                            }
+
+                            // Actualizar la hora cada segundo
+                            setInterval(updateTime, 1000);
+
+                            // Mostrar la hora al cargar la página
+                            updateTime();
+                        </script>
 
                         <div class="sb-sidenav-menu-heading">OPCIONES</div>
 
