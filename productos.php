@@ -10,6 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = "INSERT INTO productos (nombre, descripcion, cantidad, precio) VALUES ('$nombre', '$descripcion', $cantidad, $precio)";
 
     if (mysqli_query($mysqli, $query)) {
+        $alert_message = 'Producto registrado correctamente';
+            echo '<script>alert("' . $alert_message . '"); window.location.href = "productos.php";</script>';
         header("Location: productos.php");
         exit();
     } else {
