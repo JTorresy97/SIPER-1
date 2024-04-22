@@ -30,7 +30,7 @@ if (!$resultado) {
 <div id="layoutSidenav">
     <div id="layoutSidenav_content">
         <main>
-            <div class="card card-primary">
+            <div class="card card-secondary">
                 <div class="card-header">
                     <h3 class="card-title" style="font-size: 40px;"><b>LISTADO DE PRODUCTOS</b></h3>
                     <div class="card-tools">

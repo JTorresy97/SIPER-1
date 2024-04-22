@@ -7,7 +7,7 @@ require 'controlpanel.php';
 <div id="layoutSidenav">
     <div id="layoutSidenav_content">
         <main>
-            <div class="card card-success">
+            <div class="card card-secondary">
                 <div class="card-header">
                     <h3 class="card-title" style="font-size: 40px;"><b>LISTADO DE PROVEEDORES</b></h3>
                 </div>
