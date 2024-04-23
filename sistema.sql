@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `productos` (
   `nombre` varchar(255) COLLATE utf8_spanish2_ci NOT NULL,
   `descripcion` text COLLATE utf8_spanish2_ci NOT NULL,
   `cantidad` int(10) NOT NULL,
-  `precio` decimal(65,0) NOT NULL
+  `precio` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
