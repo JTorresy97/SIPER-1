@@ -1,0 +1,10 @@
+/*Actualizaciones SIPER 22 de abril de 20204
+--- Creación de la tabla proveedores con sus respectivos campos y llave primaria
+--- Creación de la tabla detalleproducto_proveedor para unir las tablas producto y proveedor / Está sujeta a cambio a futuro.
+--- Relación foránea entre la tabla proveedores y productos a través de la tabla detalleproducto_proveedor / Está sujeta a cambio a futuro.
+--- Se modifica el archivo proveedores para listar y registrar proveedores
+--- Se crea el archivo form_agregar_proveedor.php
+--- Se crea el archivo editar_proveedor.php
+--- Se crea el archivo eliminar_proveedor.php
+--- Se realizan las pruebas del CRUP proveedores
+*/

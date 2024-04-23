@@ -1,112 +1,81 @@
 <?php
-
 require 'controlpanel.php';
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $contacto = $_POST['contacto'];
+    $direccion = $_POST['direccion'];
+    $proveedor = $_POST['proveedor'];
+    $estado = 1;
+    $telefono = $_POST['telefono'];
+
+    $query = "INSERT INTO proveedor (contacto, direccion, proveedor, estado, telefono)
+    VALUES ('$contacto', '$direccion', '$proveedor', '$estado', '$telefono')";
+
+    if (mysqli_query($mysqli, $query)) {
+        $alert_message = 'Proveedor registrado correctamente';
+            echo '<script>alert("' . $alert_message . '"); window.location.href = "proveedores.php";</script>';
+        header("Location: proveedores.php");
+        exit();
+    } else {
+        echo "Error al agregar el proveedor: " . mysqli_error($mysqli);
+    }
+}
+
+
+$sql = "SELECT * FROM proveedor";
+$resultado = mysqli_query($mysqli, $sql);
+
+if (!$resultado) {
+    echo "Error al consultar la base de datos: " . mysqli_error($mysqli);
+    exit;
+}
 ?>
 
 <div id="layoutSidenav">
     <div id="layoutSidenav_content">
         <main>
-            <div class="card card-secondary">
+            <div class="card card-success">
                 <div class="card-header">
                     <h3 class="card-title" style="font-size: 40px;"><b>LISTADO DE PROVEEDORES</b></h3>
+                    <div class="card-tools">
+                        <?php
+                        if ($tipo_usuario == 1) { ?>
+
+                            <a class="btn btn-success btn-lg" href="form_agregar_proveedor.php" role="button" style="font-size: 30px;"><b>AGREGAR NUEVO PROVEEDOR</b></a>
+                        <?php } ?>
+                    </div>
                 </div>
                 
                 <div class="card-body">
                     <table id="datatablesSimple" style="font-size: 20px;">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
+                                <th>Id</th>
+                                <th>Contacto</th>
+                                <th>Dirección</th>
+                                <th>Empresa</th>
+                                <th>Teléfono</th>
+                                <th>Acciones</th>
                             </tr>
                         </thead>
-                        <tfoot>
-                            <tr>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
-                            </tr>
-                        </tfoot>
                         <tbody>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td>$320,800</td>
-                            </tr>
-                            <tr>
-                                <td>Garrett Winters</td>
-                                <td>Accountant</td>
-                                <td>Tokyo</td>
-                                <td>63</td>
-                                <td>2011/07/25</td>
-                                <td>$170,750</td>
-                            </tr>
-                            <tr>
-                                <td>Ashton Cox</td>
-                                <td>Junior Technical Author</td>
-                                <td>San Francisco</td>
-                                <td>66</td>
-                                <td>2009/01/12</td>
-                                <td>$86,000</td>
-                            </tr>
-                            <tr>
-                                <td>Cedric Kelly</td>
-                                <td>Senior Javascript Developer</td>
-                                <td>Edinburgh</td>
-                                <td>22</td>
-                                <td>2012/03/29</td>
-                                <td>$433,060</td>
-                            </tr>
-                            <tr>
-                                <td>Airi Satou</td>
-                                <td>Accountant</td>
-                                <td>Tokyo</td>
-                                <td>33</td>
-                                <td>2008/11/28</td>
-                                <td>$162,700</td>
-                            </tr>
-                            <tr>
-                                <td>Brielle Williamson</td>
-                                <td>Integration Specialist</td>
-                                <td>New York</td>
-                                <td>61</td>
-                                <td>2012/12/02</td>
-                                <td>$372,000</td>
-                            </tr>
-                            <tr>
-                                <td>Herrod Chandler</td>
-                                <td>Sales Assistant</td>
-                                <td>San Francisco</td>
-                                <td>59</td>
-                                <td>2012/08/06</td>
-                                <td>$137,500</td>
-                            </tr>
-                            <tr>
-                                <td>Rhona Davidson</td>
-                                <td>Integration Specialist</td>
-                                <td>Tokyo</td>
-                                <td>55</td>
-                                <td>2010/10/14</td>
-                                <td>$327,900</td>
-                            </tr>
-                            <tr>
-                                <td>Colleen Hurst</td>
-                                <td>Javascript Developer</td>
-                                <td>San Francisco</td>
-                                <td>39</td>
-                                <td>2009/09/15</td>
-                                <td>$205,500</td>
-                            </tr>
+                            <?php
+                            while ($fila = mysqli_fetch_assoc($resultado)) {
+                                echo "<tr>
+                        <td>{$fila['id']}</td>
+                        <td>{$fila['contacto']}</td>
+                        <td>{$fila['direccion']}</td>
+                        <td>{$fila['proveedor']}</td>
+                        <td>{$fila['telefono']}</td>";
+                                if ($tipo_usuario == 1) {
+                                    echo "<td>
+                            <a href='editar_proveedor.php?id={$fila['id']}' class='btn btn-primary'>Editar</a>
+                            <a href='eliminar_proveedor.php?id={$fila['id']}' class='btn btn-danger' onclick='return confirm(\"¿Estás seguro de querer eliminar este producto?\")'>Eliminar</a>
+                          </td>";
+                                }
+                                echo "</tr>";
+                            }
+                            ?>
                         </tbody>
                     </table>
                 </div>
