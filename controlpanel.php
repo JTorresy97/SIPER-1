@@ -38,6 +38,7 @@ mysqli_free_result($resultado);
     <link href="css/styles.css" rel="stylesheet" />
     <link rel="icon" type="image/png" href="image.png">
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         #clock {
             font-size: 24px;
