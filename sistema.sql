@@ -19,6 +19,21 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `sistema`
 --
+CREATE DATABASE IF NOT EXISTS `sistema` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish2_ci;
+USE `sistema`;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cliente`
+--
+
+CREATE TABLE IF NOT EXISTS `cliente` (
+  `id` int(11) NOT NULL,
+  `nombre` int(11) NOT NULL,
+  `email` varchar(250) COLLATE utf8_spanish2_ci NOT NULL,
+  `telefono` varchar(250) COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 -- --------------------------------------------------------
 
@@ -29,6 +44,22 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `detalleproducto_proveedor` (
   `id` int(11) NOT NULL,
   `idProveedor` int(11) NOT NULL,
+  `idProducto` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `detalleventa`
+--
+
+CREATE TABLE IF NOT EXISTS `detalleventa` (
+  `id` int(11) NOT NULL,
+  `descripción` varchar(250) COLLATE utf8_spanish2_ci NOT NULL,
+  `precio` int(11) NOT NULL,
+  `cantidad` int(11) NOT NULL,
+  `total` int(11) NOT NULL,
+  `idVenta` int(11) NOT NULL,
   `idProducto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
@@ -132,15 +163,41 @@ INSERT INTO `usuario` (`id`, `usuario`, `password`, `nombre`, `tipo_usuario`) VA
 (1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Administrador', 1),
 (2, 'usuario', 'b665e217b51994789b02b1838e730d6b93baa30f', 'Usuario Estandar', 2);
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `venta`
+--
+
+CREATE TABLE IF NOT EXISTS `venta` (
+  `id` int(11) NOT NULL,
+  `fecha_hora` datetime NOT NULL,
+  `total` int(11) NOT NULL,
+  `idCliente` int(11) NOT NULL,
+  `idUsuario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `cliente`
+--
+ALTER TABLE `cliente`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `detalleproducto_proveedor`
 --
 ALTER TABLE `detalleproducto_proveedor`
   ADD PRIMARY KEY (`id`), ADD KEY `detalleproducto_proveedor_ibfk_2` (`idProveedor`), ADD KEY `detalleproducto_porveedor_ibfk_1` (`idProducto`);
+
+--
+-- Indices de la tabla `detalleventa`
+--
+ALTER TABLE `detalleventa`
+  ADD PRIMARY KEY (`id`), ADD KEY `detalleventa_ibfk_1` (`idVenta`), ADD KEY `detalleventa_ibfk_2` (`idProducto`);
 
 --
 -- Indices de la tabla `productos`
@@ -161,13 +218,29 @@ ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `venta`
+--
+ALTER TABLE `venta`
+  ADD PRIMARY KEY (`id`), ADD KEY `venta_ibfk_1` (`idCliente`), ADD KEY `venta_ibfk_2` (`idUsuario`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
+-- AUTO_INCREMENT de la tabla `cliente`
+--
+ALTER TABLE `cliente`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT de la tabla `detalleproducto_proveedor`
 --
 ALTER TABLE `detalleproducto_proveedor`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `detalleventa`
+--
+ALTER TABLE `detalleventa`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `productos`
@@ -180,6 +253,11 @@ ALTER TABLE `productos`
 ALTER TABLE `proveedor`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT > 1;
 --
+-- AUTO_INCREMENT de la tabla `venta`
+--
+ALTER TABLE `venta`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- Restricciones para tablas volcadas
 --
 
@@ -189,6 +267,20 @@ ALTER TABLE `proveedor`
 ALTER TABLE `detalleproducto_proveedor`
 ADD CONSTRAINT `detalleproducto_porveedor_ibfk_1` FOREIGN KEY (`idProducto`) REFERENCES `productos` (`id`),
 ADD CONSTRAINT `detalleproducto_proveedor_ibfk_2` FOREIGN KEY (`idProveedor`) REFERENCES `proveedor` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `detalleventa`
+--
+ALTER TABLE `detalleventa`
+ADD CONSTRAINT `detalleventa_ibfk_1` FOREIGN KEY (`idVenta`) REFERENCES `venta` (`id`),
+ADD CONSTRAINT `detalleventa_ibfk_2` FOREIGN KEY (`idProducto`) REFERENCES `productos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `venta`
+--
+ALTER TABLE `venta`
+ADD CONSTRAINT `venta_ibfk_1` FOREIGN KEY (`idCliente`) REFERENCES `cliente` (`id`),
+ADD CONSTRAINT `venta_ibfk_2` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
