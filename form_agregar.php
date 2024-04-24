@@ -3,6 +3,15 @@
 require 'conexion.php';
 require 'controlpanel.php';
 
+$sql = "SELECT id, proveedor FROM proveedor";
+$result = $mysqli->query($sql);
+$proveedores = [];
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $proveedores[] = $row;
+    }
+}
+
 ?>
 
 <div id="layoutSidenav">
@@ -31,6 +40,15 @@ require 'controlpanel.php';
                             <div class="mb-3">
                                 <label for="precio" class="form-label">PRECIO:</label>
                                 <input type="number" class="form-control" name="precio" required>
+                            </div>
+                            <div class="mb-3">
+                            <label for="proveedor" class="form-label">PROVEEDOR:</label>
+                                <select class="form-control" name="proveedor" required>
+                                    <option value=""></option>
+                                    <?php foreach ($proveedores as $proveedor): ?>
+                                        <option value="<?php echo $proveedor['id']; ?>"><?php echo $proveedor['proveedor']; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
                             </div>
                             <button type="submit" class="btn btn-success btn-lg btn-block"><b>AGREGAR NUEVO PRODUCTO</b></button>
                         </form>
